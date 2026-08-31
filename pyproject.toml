@@ -7,4 +7,12 @@ requires-python = ">=3.13"
 dependencies = [
     "django>=6.1",
     "djangorestframework>=3.18.0",
+    "httpx>=0.28.1",
+    "psycopg[binary]>=3.3.4",
+    "redis>=8.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.4",
 ]
