@@ -8,7 +8,8 @@ ENV PYTHONUNBUFFERED=1 \
     UV_PROJECT_ENVIRONMENT="/app/.venv" \
     UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy
-RUN useradd --create-home --uid 1000 app
+ARG HOST_UID=1000
+RUN useradd --create-home --uid ${HOST_UID} app
 
 WORKDIR /app
 COPY pyproject.toml uv.lock ./
